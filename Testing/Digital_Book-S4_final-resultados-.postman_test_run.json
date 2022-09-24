@@ -1,0 +1,1188 @@
+{
+	"id": "27b95253-7fd0-4e9e-af28-b7fb47143b05",
+	"name": "Digital Book-S4-",
+	"timestamp": "2022-09-20T20:13:05.912Z",
+	"collection_id": "18093337-d69f0352-dee6-4ab2-a527-fc819428c67a",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 70,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "e00f09c4-cdc4-4c47-b38f-269c3ab7aaad",
+			"name": "Buscar Categoria",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias/1",
+			"time": 494,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Codigo 2011": true,
+				"Body contiene categoria Deportivos": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Codigo 2011": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene categoria Deportivos": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				494
+			],
+			"allTests": [
+				{
+					"Codigo 2011": true,
+					"Body contiene categoria Deportivos": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "65cc4446-2663-4394-8b0e-0d12f50df8e8",
+			"name": "Guardar Categoria",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias",
+			"time": 210,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Codigo 201": true,
+				"Body no contiene categoria Bicicletas": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Codigo 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body no contiene categoria Bicicletas": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				210
+			],
+			"allTests": [
+				{
+					"Codigo 201": true,
+					"Body no contiene categoria Bicicletas": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "ab1123c9-5e83-4d2d-8674-ecb025175f31",
+			"name": "Actualizar Categoria",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias/1",
+			"time": 208,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Codigo 201": true,
+				"Body contenga url actualizada": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Codigo 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contenga url actualizada": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				208
+			],
+			"allTests": [
+				{
+					"Codigo 201": true,
+					"Body contenga url actualizada": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "83c44aaa-7ac9-4340-bc18-9c4797a309e5",
+			"name": "Buscar Todas Categorias",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias",
+			"time": 218,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Codigo 200": true,
+				"Body contiene 3 o mas categorias": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Codigo 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene 3 o mas categorias": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				218
+			],
+			"allTests": [
+				{
+					"Codigo 200": true,
+					"Body contiene 3 o mas categorias": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "32a3746a-4d40-4371-96c1-a3dcbe690796",
+			"name": "Buscar Producto",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/1",
+			"time": 299,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true,
+				"Body contiene 3 o mas imagenes": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene 3 o mas imagenes": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				299
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true,
+					"Body contiene 3 o mas imagenes": true
+				}
+			]
+		},
+		{
+			"id": "01115656-a11c-4ecc-9c1b-b443543e5ce0",
+			"name": "Buscar Todos Productos",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/",
+			"time": 883,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true,
+				"Body contiene 3 o mas productos": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene 3 o mas productos": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				883
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true,
+					"Body contiene 3 o mas productos": true
+				}
+			]
+		},
+		{
+			"id": "78f6dd6e-a8b6-4ff9-847f-286299963a4e",
+			"name": "Guardar Producto",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos",
+			"time": 757,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				757
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "80654d9f-45d0-4e7e-a0fb-c65e02e7ec72",
+			"name": "Actualizar Producto",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/1",
+			"time": 192,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				192
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "a38523de-abda-4865-884f-074c4b000b7a",
+			"name": "Buscar ProductoxCiudad",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/ciudad/1",
+			"time": 214,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				214
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "b5587ecb-c148-49fe-b3f8-3885140aa2ad",
+			"name": "filtroCiudadYFechas",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/05/2022-00-00/2022-00-00",
+			"time": 398,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				398
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "27d0aaaf-0b24-4330-aeae-9fca95172848",
+			"name": "Buscar Ciudad",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/ciudades/1",
+			"time": 212,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true,
+				"Body no contiene pais chile": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body no contiene pais chile": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				212
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true,
+					"Body no contiene pais chile": true
+				}
+			]
+		},
+		{
+			"id": "bd8febdf-8b0a-48bf-8aed-84d5efdc693c",
+			"name": "Guardar Ciudad",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/ciudades",
+			"time": 218,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true,
+				"Body no contiene pais chile": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body no contiene pais chile": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				218
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true,
+					"Body no contiene pais chile": true
+				}
+			]
+		},
+		{
+			"id": "bfc82477-1413-470f-aaa5-4b8380a50cdf",
+			"name": "Buscar Todas Ciudades",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/ciudades",
+			"time": 267,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true,
+				"Body contiene 3 o mas ciudades": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene 3 o mas ciudades": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				267
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true,
+					"Body contiene 3 o mas ciudades": true
+				}
+			]
+		},
+		{
+			"id": "b8b40d58-7332-462c-8966-060374bed4e0",
+			"name": "Actualizar Ciudad",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/ciudades/1",
+			"time": 194,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true,
+				"Body no contiene categoria Bicicletas": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body no contiene categoria Bicicletas": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				194
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true,
+					"Body no contiene categoria Bicicletas": true
+				}
+			]
+		},
+		{
+			"id": "7206cd43-5bd1-49cd-bfbe-fc30cd5e2fd7",
+			"name": "Buscar Imagenes",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/imagenes/1",
+			"time": 191,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				191
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "92891667-1d4a-4d13-b224-7c3d413c63d9",
+			"name": "Guardar Imagenes",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/imagenes/",
+			"time": 202,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				202
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "33282d43-48e7-451f-8346-d4e8c1d9de83",
+			"name": "Buscar Todas Imagenes",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/imagenes",
+			"time": 321,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body contiene 3 o mas imagenes": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene 3 o mas imagenes": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				321
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body contiene 3 o mas imagenes": true
+				}
+			]
+		},
+		{
+			"id": "bafbe82b-0d37-45f8-8fb4-5ed6edc672ad",
+			"name": "Actualizar Imagenes",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/imagenes/1",
+			"time": 200,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				200
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "73bb9204-e0ec-4e07-89f6-d3f3b424c901",
+			"name": "Buscar Todas Politicas",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/politicas",
+			"time": 217,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body contiene 3 o mas categorias": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene 3 o mas categorias": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				217
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body contiene 3 o mas categorias": true
+				}
+			]
+		},
+		{
+			"id": "c681366f-7282-479f-bbdd-af93539e2fc9",
+			"name": "Guardar Reserva user",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/reservas",
+			"time": 322,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				322
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "82954504-6e35-4fea-9337-a15c3ceb12bc",
+			"name": "Actualizar reservas",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/reservas/1",
+			"time": 211,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				211
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "00de650c-6e16-44b2-a05e-fabd2cc18b6f",
+			"name": "Buscar Todas Reservas",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/reservas",
+			"time": 501,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true,
+				"Body contiene 3 o mas reservas": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene 3 o mas reservas": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				501
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true,
+					"Body contiene 3 o mas reservas": true
+				}
+			]
+		},
+		{
+			"id": "7ac6b455-4248-4c22-9f23-ff260e16fe39",
+			"name": "Buscar reservasXIdDeReservas",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/reservas/1",
+			"time": 244,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				244
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "947aee1d-8557-4e22-a77c-280f063d0467",
+			"name": "Buscar reservasXIdDeUsuario",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/usuarios/1/reservas",
+			"time": 485,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				485
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "7be429ee-6195-4e1f-9afb-18f16af6cd72",
+			"name": "Register",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/register",
+			"time": 355,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				355
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "42b7663c-a83d-4564-b944-b9eed2026862",
+			"name": "Log In User",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login",
+			"time": 320,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				320
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "302f1a2f-af06-4a66-9586-9b4a37b03edb",
+			"name": "Log In Admin",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login",
+			"time": 327,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				327
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "adc5e4c4-46dc-4467-95db-acee1354d547",
+			"name": "Actualizar Usuario",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/usuarios/2",
+			"time": 208,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				208
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "04a961f5-0e71-43fe-9b0e-1dd7b09e7bbb",
+			"name": "ReservasxUsuario",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/usuarios/2/reservas",
+			"time": 219,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				219
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "fe60c938-15c3-434b-97d9-a51e10e56437",
+			"name": "Buscar Todos Usuarios",
+			"url": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/usuarios",
+			"time": 189,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true,
+				"Body contiene 3 o mas usuarios": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contiene 3 o mas usuarios": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				189
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true,
+					"Body contiene 3 o mas usuarios": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 9276,
+	"collection": {
+		"requests": [
+			{
+				"id": "e00f09c4-cdc4-4c47-b38f-269c3ab7aaad",
+				"method": "GET"
+			},
+			{
+				"id": "65cc4446-2663-4394-8b0e-0d12f50df8e8",
+				"method": "POST"
+			},
+			{
+				"id": "ab1123c9-5e83-4d2d-8674-ecb025175f31",
+				"method": "PUT"
+			},
+			{
+				"id": "83c44aaa-7ac9-4340-bc18-9c4797a309e5",
+				"method": "GET"
+			},
+			{
+				"id": "32a3746a-4d40-4371-96c1-a3dcbe690796",
+				"method": "GET"
+			},
+			{
+				"id": "01115656-a11c-4ecc-9c1b-b443543e5ce0",
+				"method": "GET"
+			},
+			{
+				"id": "78f6dd6e-a8b6-4ff9-847f-286299963a4e",
+				"method": "POST"
+			},
+			{
+				"id": "80654d9f-45d0-4e7e-a0fb-c65e02e7ec72",
+				"method": "PUT"
+			},
+			{
+				"id": "a38523de-abda-4865-884f-074c4b000b7a",
+				"method": "GET"
+			},
+			{
+				"id": "b5587ecb-c148-49fe-b3f8-3885140aa2ad",
+				"method": "GET"
+			},
+			{
+				"id": "27d0aaaf-0b24-4330-aeae-9fca95172848",
+				"method": "GET"
+			},
+			{
+				"id": "bd8febdf-8b0a-48bf-8aed-84d5efdc693c",
+				"method": "POST"
+			},
+			{
+				"id": "bfc82477-1413-470f-aaa5-4b8380a50cdf",
+				"method": "GET"
+			},
+			{
+				"id": "b8b40d58-7332-462c-8966-060374bed4e0",
+				"method": "PUT"
+			},
+			{
+				"id": "7206cd43-5bd1-49cd-bfbe-fc30cd5e2fd7",
+				"method": "GET"
+			},
+			{
+				"id": "92891667-1d4a-4d13-b224-7c3d413c63d9",
+				"method": "POST"
+			},
+			{
+				"id": "33282d43-48e7-451f-8346-d4e8c1d9de83",
+				"method": "GET"
+			},
+			{
+				"id": "bafbe82b-0d37-45f8-8fb4-5ed6edc672ad",
+				"method": "PUT"
+			},
+			{
+				"id": "73bb9204-e0ec-4e07-89f6-d3f3b424c901",
+				"method": "GET"
+			},
+			{
+				"id": "c681366f-7282-479f-bbdd-af93539e2fc9",
+				"method": "POST"
+			},
+			{
+				"id": "82954504-6e35-4fea-9337-a15c3ceb12bc",
+				"method": "PUT"
+			},
+			{
+				"id": "00de650c-6e16-44b2-a05e-fabd2cc18b6f",
+				"method": "GET"
+			},
+			{
+				"id": "7ac6b455-4248-4c22-9f23-ff260e16fe39",
+				"method": "GET"
+			},
+			{
+				"id": "947aee1d-8557-4e22-a77c-280f063d0467",
+				"method": "GET"
+			},
+			{
+				"id": "7be429ee-6195-4e1f-9afb-18f16af6cd72",
+				"method": "POST"
+			},
+			{
+				"id": "42b7663c-a83d-4564-b944-b9eed2026862",
+				"method": "POST"
+			},
+			{
+				"id": "302f1a2f-af06-4a66-9586-9b4a37b03edb",
+				"method": "POST"
+			},
+			{
+				"id": "adc5e4c4-46dc-4467-95db-acee1354d547",
+				"method": "PUT"
+			},
+			{
+				"id": "04a961f5-0e71-43fe-9b0e-1dd7b09e7bbb",
+				"method": "GET"
+			},
+			{
+				"id": "fe60c938-15c3-434b-97d9-a51e10e56437",
+				"method": "GET"
+			}
+		]
+	}
+}

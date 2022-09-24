@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+:root {
+	--font-family: 'Quicksand', sans-serif;
+	--naranja: #F0572D;
+}
+
+* {
+	padding: 0px;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.form {
+	margin-top: 130px;
+	height: 73.6vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	flex-flow: column nowrap;
+	text-align: center;
+	align-items: center;
+}
+
+body {
+	background: var(--body-bg-color);
+	font-family: var(--font-family);
+}
+
+.form-titulo {
+	color: var(--naranja);
+	text-align: center;
+	font-family: var(--font-family);
+	margin-bottom: 20px;
+}
+
+.seccion1 {
+	display: flex;
+	justify-content: center;
+}
+
+.seccion2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-nombre label,
+.form-apellido label {
+	display: flex;
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: #1f1f1f;
+	margin-top: 20px;
+}
+
+.form-correo label,
+.form-contraseña label {
+	display: flex;
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: #1f1f1f;
+	margin-top: 20px;
+}
+
+.form-apellido {
+	margin-left: 20px;
+}
+
+.form input,
+.form textarea {
+	Width: 218px;
+	Height: 40px;
+	font-family: var(--font-family);
+	background: #FFFFFF;
+	border-radius: 5px;
+	border: 2px solid #FFFFFF;
+	font-size: 12px;
+	padding: 10px;
+	margin-bottom: 5px;
+	color: #31363F;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
+}
+
+.form .seccion2 input,
+.form .seccion2 textarea {
+	Width: 455px;
+	Height: 40px;
+	font-family: var(--font-family);
+	background: #FFFFFF;
+	border-radius: 5px;
+	border: 2px solid #FFFFFF;
+	font-size: 12px;
+	padding: 10px;
+	margin-bottom: 5px;
+	color: #31363F;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
+}
+
+.form .seccion1 .error {
+	text-align: left;
+	color: #e92b2d;
+	font-weight: 600;
+	font-size: 12px;
+	Width: 218px;
+}
+
+.form .seccion2 .error {
+	text-align: left;
+	color: #e92b2d;
+	font-weight: 600;
+	font-size: 12px;
+	Width: 455px;
+}
+
+.Buttom {
+	height: 400px;
+	margin-top: 40px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.Buttom p {
+	color: #31363F;
+	font-size: 12px;
+	font-weight: 900;
+	margin-top: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: var(--naranja);
+}
+
+.ParrafoTienesCuenta {
+	margin-bottom: 28vh;
+}
+
+.form button[type="submit"] {
+	display: flex;
+	background: var(--naranja);
+	font-weight: 600;
+	font-family: var(--font-family);
+	border: none;
+	cursor: pointer;
+	height: 40px;
+	width: 240px;
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 16px;
+	align-items: center;
+	justify-content: center;
+}
+
+.form button[type="submit"]:hover {
+	background: #e84011;
+	transform: scale(1.15);
+	box-shadow: 0px 5px 10px rgba(246, 96, 3, 0.762);
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+	.form {
+		margin-top: 94px;
+		width: 100vw;
+		height: 73vh;
+	}
+
+	.form input,
+	.form textarea {
+		Width: 45vw;
+		
+	}
+
+	.form .seccion2 input,
+	.form .seccion2 textarea {
+		Width: 95vw;
+	}
+}

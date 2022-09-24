@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
+
+
+
+.header{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
+}
+
+.header-logo-img{
+    height: 3rem;
+    width: 14rem;
+    margin-left: 3rem;
+    object-fit: fill;
+}
+.header-derecha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-derecha-boton {
+    padding: .8rem 2rem;
+    margin-right: 2.1rem;
+    border-radius: .7rem;
+    border: none;
+}
+
+.sesion {
+    margin-left: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: rgb(237, 238, 238);
+}
+
+.cuenta {
+    background-color: #F0572D;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* botones hamburguesa */
+.header-boton {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: none;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .header-boton {
+        display: block;
+        opacity: 1;
+    }
+
+    .header-derecha-boton {
+        margin-right: 15rem;
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        height: 100vh;
+        width: 50%;
+        flex-direction: column;
+        transition: 1s;
+        transform: translateX(150vh);
+        background-color: #F0572D;
+   
+        z-index: 1000;
+    }
+
+    header .responsive-header {
+        transform: none;
+    }
+
+    .header-cerrar-boton {
+        position: absolute;
+        top: 2.7rem;
+        right: 1rem;
+    }
+
+    .sesion {
+        width: 148px;
+        margin-top: 10rem;
+        margin-left: 15rem;
+    }
+
+    .cuenta {
+        width: 148px;
+        margin-bottom: 18rem;
+        margin-left: 15rem;
+        margin-top: 10rem;
+        background-color: rgb(237, 238, 238);
+        color: black;
+        font-weight: 500;
+    }
+
+}

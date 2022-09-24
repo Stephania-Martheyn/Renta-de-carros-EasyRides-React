@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --naranja: #F0572D;
+    --fuente1: 'Aldrich', sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--naranja);
+    height: 122px;
+}
+
+.header-logo {
+    /*Ajustando tamaño del logo*/
+    width: 360px;
+    height: 110px;
+    margin-left: .5rem;
+}
+
+.nav_menu {
+    /*Editor del contenedor de boton*/
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.nav_item {
+    /*Editor de boton general*/
+    width: 200px;
+    color: white;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    font-family: var(--fuente1);
+    cursor: pointer;
+}
+
+#Iniciar-sesion {
+    /*Editor de boton iniciar sesion*/
+    background: #928C8C;
+    margin-right: 20px;
+}
+
+#Iniciar-sesion:after {
+    content: "";
+    background: black;
+    /*---> color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+#Iniciar-sesion:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+#Crear-cuenta {
+    /*Editor de boton crear cuenta*/
+    background-color: #31363F;
+}
+
+#Crear-cuenta:after {
+    content: "";
+    background: black;
+    /*---> color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+#Crear-cuenta:hover:after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.nav_input:checked+.nav_menu {
+    background-color: NONE;
+}
+
+.nav_label,
+.nav_input {
+    /*Para que no se vea menu de hamburguesa*/
+    display: none;
+}
+
+.FaBars {
+    width: 1000px;
+    height: 1000px;
+}
+
+.menuHamburguesa {
+    width: 100px;
+    height: 70px;
+    margin-top: 30px;
+}
+
+/*-------------------------------------
+        DESAROLLO DEL RESPONSIVE
+---------------------------------------*/
+
+
+@media (max-width: 900px) {
+
+    .nav_label {
+        /*Hace visible el menu hamburguesa*/
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav_menu {
+        position: fixed;
+        top: 120px;
+        bottom: 0;
+        background: linear-gradient(white, #6f7277);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+        z-index: 2;
+    }
+
+    .nav_input:checked+.nav_menu {
+        clip-path: circle(100% at center);
+    }
+
+    .nav_item {
+        /*Editor de boton general*/
+        width: 200px;
+        color: white;
+        text-decoration: none;
+
+
+        padding: 16px 20px;
+        border-radius: 5px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: inline-block;
+        font-family: var(--fuente1);
+        cursor: pointer;
+    }
+
+    #Iniciar-sesion {
+        /*Editor de boton iniciar sesion*/
+        background: #928C8C;
+        margin-right: 0;
+        margin-top: 30px;
+    }
+
+    #Iniciar-sesion:after {
+        background: var(--naranja);
+        /*---> color de fondo hover */
+    }
+
+    #Crear-cuenta {
+        /*Editor de boton crear cuenta*/
+        background-color: #31363F;
+        margin-top: 30px;
+    }
+
+    #Crear-cuenta:after {
+
+        background: var(--naranja);
+        /*---> color de fondo hover */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

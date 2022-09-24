@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
+
+
+.buscador {
+    height: 25rem;
+    display: flex;
+    background-image: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.buscadores {
+    /*Contenedor del buscador para ingresar datos*/
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #ffff;
+    border: 3px solid transparent;
+    border-radius: .5rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+    margin: 0 auto;
+    margin-top: 350px;
+}
+
+.buscador-fecha {
+    border-radius: 5px;
+    border-style: none;
+    border: none;
+    cursor: pointer;
+}
+
+.buscador-titulo {
+    /*Mensaje del buscador*/
+    color: white;
+    font-size: 70px;
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    position: absolute;
+}
+
+.buscador-submit {
+    /*Boton del buscador*/
+    padding: .8rem 3rem;
+    border-radius: .8rem;
+    border: none;
+    background-color: #F0572D;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    justify-content: center;
+}
+
+/*-------------------------------------
+        DESAROLLO DEL RESPONSIVE
+---------------------------------------*/
+
+@media only screen and (max-width: 1026px) {
+    .buscadores {
+        height: 6rem;
+        gap: .2rem;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .buscadores {
+        height: 15rem;
+        gap: 0rem;
+        flex-direction: column;
+        margin-top: 17rem;
+    }
+}
+@media only screen and (max-width: 695px) {
+    .buscadores {
+        padding: 1rem;
+        gap: 0rem;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .buscador-titulo {
+        font-size: 50px;
+        margin-left: 3rem;
+        margin-top: 1.5rem;
+        position: absolute;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .buscadores {
+        gap: 0rem;
+        flex-direction: column;
+        margin-top: 20rem;
+    }
+}

@@ -1,0 +1,17 @@
+/* .formulario{
+    padding: 2rem;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
+}
+.seccion-1{
+    display: flex;
+    
+} */
+#categoria{
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
+    border-radius: .5rem;
+    width: 15rem;
+    height: 2rem;
+}
+.formulario-admin-primera-linea{
+    display: flex;
+}

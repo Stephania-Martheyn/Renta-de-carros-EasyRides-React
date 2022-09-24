@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+:root{
+    --font-family:'Quicksand', sans-serif;
+    --naranja:#F0572D;
+}
+
+body {
+	font-family: var(--font-family);
+}
+.contenedor {
+	width: 100%;
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 130px;
+}
+
+@media only screen and (min-height: 1355px) {
+	.contenedor {
+		width: 100%;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		margin-top: 130px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.formulario {
+		width: 40%;
+	}
+}
+.formulario {
+	padding: 3 0px;
+}
+
+.formulario > div {
+   
+	margin-bottom: 20px;
+}
+.Titulo-Login{
+ 
+color: var(--naranja);
+text-align: center;
+font-family: var(--font-family);
+margin-bottom: 20px;
+
+}
+.formulario label {
+	display: block;
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 5px;
+	color: #1f1f1f;
+}
+
+.formulario input,
+
+.formulario textarea {
+	font-family: var(--font-family);
+    background: #FFFFFF;
+	width: 100%;
+	border-radius: 5px;
+	border: 2px solid #FFFFFF;
+	font-size: 12px;
+	padding: 10px;
+	margin-bottom: 5px;
+	color: #31363F;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
+}
+
+.formulario input:focus {
+	outline: none;
+	border: 2px solid var(--naranja);
+}
+
+.formulario .error {
+	color: #e92b2d;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.Buttom {
+	height: 35vh !important;
+    margin-top:40px;
+    display:flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+}
+.Buttom p{
+    color: #31363F;
+    font-size: 12px;
+    font-weight: 900;
+    margin-top:20px;
+}
+a{
+    text-decoration:none;
+    color: var(--naranja);
+}
+
+.formulario button[type="submit"] {
+	display: flex;
+	background: var(--naranja);
+	font-weight: 600;
+	font-family: var(--font-family);
+	border: none;
+	cursor: pointer;
+    height:40px;
+	width: 240px;
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario button[type="submit"]:hover {
+	background: #e84011;
+    transform: scale(1.15);
+    box-shadow: 0px 5px 10px rgba(246, 96, 3, 0.762);
+}
+
+.formulario .exito {
+	text-align: center;
+	font-size: 14px;
+	padding-top: 20px;
+	color: #02a802;
+}
+
+.formulario input[type="radio"] {
+	width: auto;
+}

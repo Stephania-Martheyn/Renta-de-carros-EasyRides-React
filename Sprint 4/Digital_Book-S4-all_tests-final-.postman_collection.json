@@ -1,0 +1,1579 @@
+{
+	"info": {
+		"_postman_id": "d69f0352-dee6-4ab2-a527-fc819428c67a",
+		"name": "Digital Book-S4-",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18093337"
+	},
+	"item": [
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "Buscar Categoria",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Codigo 2011\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body contiene categoria Deportivos\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.categorias.titulo).to.eql(\"Deportivos\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.categorias.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.categorias.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categorias/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar Categoria",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Codigo 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body no contiene categoria Bicicletas\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.categorias.titulo).to.not.include(\"Bicicletas\");\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.categorias.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.categorias.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTU4MTV9.kq3O-YUgOR1QZW8EoR0n1iJE2R58yVWW-oidOXrxJTD1yQldBzxLNDeYeW-yKp6lxsIz6XOO2hGs2iHMFNEjxA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Deportivos nico\",\r\n        \"descripcion\": \"velocidad y desempeño\",\r\n        \"url\": \"https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80\",\r\n        \"productos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categorias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Categoria",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Codigo 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body contenga url actualizada\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"velocidad y desempeño actualizado\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.categorias.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.categorias.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MDk3MDJ9.kNQqVPtQsq5QSiAfEA2jaRd0UpnGyTGwyozzYimvYaYEZjUVHflnmv__OnQDTP-HXW5pFlQBN9dh1u8xivrTKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"titulo\": \"Deportivos\",\r\n            \"descripcion\": \"velocidad y desempeño actualizado\",\r\n            \"url\": \"https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categorias/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todas Categorias",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body contiene 3 o mas categorias\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.categorias.length).to.be.gte(3);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.categorias.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.categorias.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categorias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Buscar Producto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.productos.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.productos.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body contiene 3 o mas imagenes\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.productos.imagenes.length).to.be.gte(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos Productos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.productos.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.productos.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});\r",
+									"pm.test(\"Body contiene 3 o mas productos\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.productos.length).to.be.gte(3);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar Producto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTM1NTN9.cs1_nwyotJT_DEhWeXawPUQXIL5A8U-09hGF_qV06T0h8XJq1xZOYMUB144s7a-b-F_K2FODag2cCgOppB52zA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Mercedes Benz nico\",\r\n    \"descripcion\": \"va mas rapido que tu vieja\",\r\n    \"ciudad\": {\r\n        \"id\": 2\r\n    },\r\n    \"categoria\": {\r\n        \"id\": 2\r\n    },\r\n    \"caracteristicas\": [\r\n        {\"id\": 1},\r\n        {\"id\": 2},\r\n        {\"id\": 3},\r\n        {\"id\": 4}\r\n    ],\r\n    \"imagenes\": [\r\n        {\"url\": \"urldeprueba.com\"},\r\n        {\"url\": \"urldeprueba.com\"},\r\n        {\"url\": \"urldeprueba.com\"}\r\n    ]\r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Producto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.productos.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.productos.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTM1NTN9.cs1_nwyotJT_DEhWeXawPUQXIL5A8U-09hGF_qV06T0h8XJq1xZOYMUB144s7a-b-F_K2FODag2cCgOppB52zA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Mercedes Benz Nico\",\r\n    \"descripcion\": \"va rapido Nico\",\r\n    \"url\": \"deprueba.com Nico\",\r\n    \"ciudad\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/productos/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar ProductoxCiudad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.productos.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.productos.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/ciudad/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"ciudad",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filtroCiudadYFechas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.productos.titulo).to.not.be.null;\r",
+									"    pm.expect(jsonData.productos.descripcion).to.not.be.null;\r",
+									"    \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/05/2022-00-00/2022-00-00",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"05",
+								"2022-00-00",
+								"2022-00-00"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ciudades",
+			"item": [
+				{
+					"name": "Buscar Ciudad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.ciudad.nombre).to.not.be.null;\r",
+									"    pm.expect(jsonData.ciudad.provincia).to.not.be.null;\r",
+									"     pm.expect(jsonData.ciudad.pais).to.not.be.null;\r",
+									"    \r",
+									"});\r",
+									"pm.test(\"Body no contiene pais chile\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.ciudad.pais).to.not.include(\"chile\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTM1NTN9.cs1_nwyotJT_DEhWeXawPUQXIL5A8U-09hGF_qV06T0h8XJq1xZOYMUB144s7a-b-F_K2FODag2cCgOppB52zA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Rafaela1\",\r\n    \"provincia\": \"Santa Fe1\",\r\n    \"pais\": \"Argentina1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ciudades/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ciudades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar Ciudad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.ciudad.nombre).to.not.be.null;\r",
+									"    pm.expect(jsonData.ciudad.provincia).to.not.be.null;\r",
+									"     pm.expect(jsonData.ciudad.pais).to.not.be.null;\r",
+									"    \r",
+									"});\r",
+									"pm.test(\"Body no contiene pais chile\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.ciudad.pais).to.not.include(\"chile\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTM1NTN9.cs1_nwyotJT_DEhWeXawPUQXIL5A8U-09hGF_qV06T0h8XJq1xZOYMUB144s7a-b-F_K2FODag2cCgOppB52zA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"nico\",\r\n    \"provincia\": \"nico\",\r\n    \"pais\": \"Argentina1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ciudades",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ciudades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todas Ciudades",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.ciudad.nombre).to.not.be.null;\r",
+									"    pm.expect(jsonData.ciudad.provincia).to.not.be.null;\r",
+									"     pm.expect(jsonData.ciudad.pais).to.not.be.null;\r",
+									"    \r",
+									"});\r",
+									"pm.test(\"Body contiene 3 o mas ciudades\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.ciudad.length).to.be.gte(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ciudades",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ciudades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Ciudad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.ciudad.nombre).to.not.be.null;\r",
+									"    pm.expect(jsonData.ciudad.provincia).to.not.be.null;\r",
+									"     pm.expect(jsonData.ciudad.pais).to.not.be.null;\r",
+									"    \r",
+									"});\r",
+									"pm.test(\"Body no contiene categoria Bicicletas\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.ciudad.pais).to.not.include(\"chile\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTM1NTN9.cs1_nwyotJT_DEhWeXawPUQXIL5A8U-09hGF_qV06T0h8XJq1xZOYMUB144s7a-b-F_K2FODag2cCgOppB52zA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"FAFA\",\r\n    \"provincia\": \"La del Diego\",\r\n    \"pais\": \"ARgenzuela\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ciudades/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ciudades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Imagenes",
+			"item": [
+				{
+					"name": "Buscar Imagenes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.imagenes.url).to.not.be.null;\r",
+									"});\r",
+									"    \r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTcwMTl9.KK-wsCka7sQYzvZmzu4BGz07PYZCCdYBD_RUJn6srCuDhMBUnqR0KoNiIJk3Z7CGV4IEPjlvBLoUPMjq567Bhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/imagenes/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"imagenes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar Imagenes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.imagenes.url).to.not.be.null;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3ODkyNzJ9.mnXvNaVXDTvzjDoIHn7BO9gPJElmC2wYou-hktCI_UbKXk0RlgIhF2BKHcmdSuEU51jxPPz7qyMTFIRK9AXDSQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n     \"url\": \"nico*-https://www.diariomotor.com/imagenes/2020/08/mercedes-clase-s-2021-0820-01.jpg\",\r\n     \"producto\": {   \r\n        \"id\": 1}\r\n\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/imagenes/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"imagenes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todas Imagenes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body contiene 3 o mas imagenes\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.imagenes.length).to.be.gte(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/imagenes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"imagenes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Imagenes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.imagenes.url).to.not.be.null;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3ODkyNzJ9.mnXvNaVXDTvzjDoIHn7BO9gPJElmC2wYou-hktCI_UbKXk0RlgIhF2BKHcmdSuEU51jxPPz7qyMTFIRK9AXDSQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n     \"url\": \"nico*-https://www.diariomotor.com/imagenes/2020/08/mercedes-clase-s-2021-0820-01.jpg\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/imagenes/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"imagenes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Politicas",
+			"item": [
+				{
+					"name": "Buscar Todas Politicas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body contiene 3 o mas categorias\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.politicas.length).to.be.gte(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/politicas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"politicas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservas",
+			"item": [
+				{
+					"name": "Guardar Reserva user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reservas.id).to.not.be.null;\r",
+									"      pm.expect(jsonData.reservas.producto).to.not.be.null;\r",
+									"        pm.expect(jsonData.reservas.ciudad).to.not.be.null;\r",
+									"          pm.expect(jsonData.reservas.caracteristicas).to.not.be.null;\r",
+									"            pm.expect(jsonData.reservas.usuario).to.not.be.null;\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTcwMTl9.KK-wsCka7sQYzvZmzu4BGz07PYZCCdYBD_RUJn6srCuDhMBUnqR0KoNiIJk3Z7CGV4IEPjlvBLoUPMjq567Bhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"horaInicio\": \"22:15\",\r\n    \"fechaInicial\": \"2022-05-15\",\r\n    \"fechaFinal\": \"2022-05-18\",\r\n    \"producto\": {\r\n        \"id\": 1\r\n    },\r\n    \"usuario\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar reservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reservas.id).to.not.be.null;\r",
+									"      pm.expect(jsonData.reservas.producto).to.not.be.null;\r",
+									"        pm.expect(jsonData.reservas.ciudad).to.not.be.null;\r",
+									"          pm.expect(jsonData.reservas.caracteristicas).to.not.be.null;\r",
+									"            pm.expect(jsonData.reservas.usuario).to.not.be.null;\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTcwMTl9.KK-wsCka7sQYzvZmzu4BGz07PYZCCdYBD_RUJn6srCuDhMBUnqR0KoNiIJk3Z7CGV4IEPjlvBLoUPMjq567Bhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \r\n                    \r\n            \"horaInicio\": \"12:15\",\r\n            \"fechaInicial\": \"2022-05-25\",\r\n            \"fechaFinal\": \"2022-05-28\"\r\n          \r\n           \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todas Reservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reservas.id).to.not.be.null;\r",
+									"      pm.expect(jsonData.reservas.producto).to.not.be.null;\r",
+									"        pm.expect(jsonData.reservas.ciudad).to.not.be.null;\r",
+									"          pm.expect(jsonData.reservas.caracteristicas).to.not.be.null;\r",
+									"            pm.expect(jsonData.reservas.usuario).to.not.be.null;\r",
+									"\r",
+									"});\r",
+									"pm.test(\"Body contiene 3 o mas reservas\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reservas.length).to.be.gte(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar reservasXIdDeReservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reservas.id).to.not.be.null;\r",
+									"      pm.expect(jsonData.reservas.producto).to.not.be.null;\r",
+									"        pm.expect(jsonData.reservas.ciudad).to.not.be.null;\r",
+									"          pm.expect(jsonData.reservas.caracteristicas).to.not.be.null;\r",
+									"            pm.expect(jsonData.reservas.usuario).to.not.be.null;\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTcwMTl9.KK-wsCka7sQYzvZmzu4BGz07PYZCCdYBD_RUJn6srCuDhMBUnqR0KoNiIJk3Z7CGV4IEPjlvBLoUPMjq567Bhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar reservasXIdDeUsuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.usuarios.id).to.not.be.null;\r",
+									"      pm.expect(jsonData.usuarios.producto).to.not.be.null;\r",
+									"        pm.expect(jsonData.usuarios.ciudad).to.not.be.null;\r",
+									"          pm.expect(jsonData.usuarios.caracteristicas).to.not.be.null;\r",
+									"            \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTg1MTV9.G8-REN1bcYy4PP6LAp8A_qYl7MH_g5wvnNxSHUpHg1ripqSpq9wQjkVoYzPTpL3r9O0Hwk_bjJOy__coH9Ombg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/1/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"1",
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.nombre).to.not.be.null;\r",
+									"      pm.expect(jsonData.apellido).to.not.be.null;\r",
+									"        pm.expect(jsonData.email).to.not.be.null;\r",
+									"          pm.expect(jsonData.ciudad).to.not.be.null;\r",
+									"            \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Catalina123\",\r\n    \"apellido\": \"Muriel123\",\r\n    \"email\": \"catimuri123@dh123.com\",\r\n    \"password\": \"contraseniaultrasecreta123\",\r\n    \"ciudad\": \"Buenos Aires\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log In User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.nombre).to.not.be.null;\r",
+									"      pm.expect(jsonData.apellido).to.not.be.null;\r",
+									"        pm.expect(jsonData.email).to.not.be.null;\r",
+									"          pm.expect(jsonData.ciudad).to.not.be.null;\r",
+									"            \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"catimuri123@dh.com\",\r\n    \"password\": \"contraseniaultrasecreta\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log In Admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.nombre).to.not.be.null;\r",
+									"      pm.expect(jsonData.apellido).to.not.be.null;\r",
+									"        pm.expect(jsonData.email).to.not.be.null;\r",
+									"          pm.expect(jsonData.ciudad).to.not.be.null;\r",
+									"            \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"grupo11@digital.com\",\r\n    \"password\": \"grupo11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjYXRpbXVyaTEyM0BkaC5jb20iLCJyb2xlcyI6IlJPTEVfVVNFUiIsInVzZXJJZCI6MywiZXhwIjoxNjYzNzE4NzE1fQ.lwLWnC-3OC8ighFqdd30XzvZz_5gTxfWfA0ayAWuaC_PxCVyADOjqUcorFMhOQl2ZHDxMtzwd0TDmKDlskApUg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Catalina1-nico1\",\r\n    \"apellido\": \"Muriel1\",\r\n    \"email\": \"catimuri@dh.com\",\r\n    \"password\": \"contrasenianueva\",\r\n    \"ciudad\": \"BS AS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReservasxUsuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.usuarios.id).to.not.be.null;\r",
+									"      pm.expect(jsonData.usuarios.producto).to.not.be.null;\r",
+									"        pm.expect(jsonData.usuarios.ciudad).to.not.be.null;\r",
+									"          pm.expect(jsonData.usuarios.caracteristicas).to.not.be.null;\r",
+									"            \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncnVwbzExQGRpZ2l0YWwuY29tIiwicm9sZXMiOiJST0xFX0FETUlOIiwidXNlcklkIjoxLCJleHAiOjE2NjM3MTg1MTV9.G8-REN1bcYy4PP6LAp8A_qYl7MH_g5wvnNxSHUpHg1ripqSpq9wQjkVoYzPTpL3r9O0Hwk_bjJOy__coH9Ombg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/2/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"2",
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos Usuarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response object should not have null values\", () => {\r",
+									"     var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.usuarios.id).to.not.be.null;\r",
+									"      pm.expect(jsonData.usuarios.producto).to.not.be.null;\r",
+									"        pm.expect(jsonData.usuarios.ciudad).to.not.be.null;\r",
+									"          pm.expect(jsonData.usuarios.caracteristicas).to.not.be.null;\r",
+									"            \r",
+									"});\r",
+									"pm.test(\"Body contiene 3 o mas usuarios\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.usuarios.length).to.be.gte(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080"
+		}
+	]
+}
